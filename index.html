@@ -179,8 +179,17 @@
         </div>
 
         <div class="collection-layout">
+          <!-- Mobile Filter Toggle -->
+          <button class="mobile-filter-btn" id="open-filter">
+            <i class="fas fa-filter"></i> Filtrer les produits
+          </button>
+
           <!-- Sidebar Filtres -->
-          <aside class="filter-sidebar">
+          <aside class="filter-sidebar" id="filter-sidebar">
+            <div class="sidebar-header">
+              <h4>Filtres</h4>
+              <button class="close-sidebar" id="close-filter"><i class="fas fa-times"></i></button>
+            </div>
             <div class="filter-group">
               <h4>Catégorie</h4>
               <label class="filter-option">
