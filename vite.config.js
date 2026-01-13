@@ -19,6 +19,7 @@ export default defineConfig({
         admin_besoins: resolve(__dirname, 'admin/besoins.html'),
         admin_rappels: resolve(__dirname, 'admin/rappels.html'),
         admin_ventes: resolve(__dirname, 'admin/ventes.html'),
+        produit_detail: resolve(__dirname, 'produit-detail.html'),
       },
     },
   },
