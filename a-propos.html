@@ -10,13 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-content">
-            <a href="/" class="logo">
+            <a href="/index.html" class="logo">
                 <img src="/logo-new.jpg" alt="Les Opticiens du Golfe Logo" style="height: 60px; border-radius: 5px;">
             </a>
             <button class="menu-toggle" aria-label="Menu Toggle">
@@ -46,19 +47,19 @@
         </section>
 
         <!-- Qui sommes-nous -->
-        <section class="about-content">
-            <div class="container"
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+        <section class="about-content" style="padding: 60px 0;">
+            <div class="container about-grid">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop"
-                        alt="Notre équipe" style="border-radius: 20px; box-shadow: var(--shadow-lg);">
+                    <img src="/about-store.png" alt="Notre boutique premium">
                 </div>
                 <div class="about-text">
                     <h2 style="color: var(--primary); margin-bottom: 1.5rem;">Qui sommes-nous ?</h2>
-                    <p style="margin-bottom: 1.5rem;">Situés au cœur de Cotonou, **Les Opticiens du Golfe** sont nés
+                    <p style="margin-bottom: 1.5rem; line-height: 1.7;">Situés au cœur de Cotonou, <strong>Les Opticiens
+                            du Golfe</strong> sont nés
                         d'une passion pour la santé visuelle et le design. Nous croyons que bien voir est essentiel pour
                         bien vivre, et que chaque client mérite une solution parfaitement adaptée à son mode de vie.</p>
-                    <p style="margin-bottom: 1.5rem;">Notre équipe d'opticiens-lunetiers diplômés met son expertise à
+                    <p style="margin-bottom: 1.5rem; line-height: 1.7;">Notre équipe d'opticiens-lunetiers diplômés met
+                        son expertise à
                         votre service pour vous offrir un bilan visuel précis et des conseils esthétiques pointus. Que
                         vous recherchiez la performance technique ou le style intemporel, nous saurons vous accompagner.
                     </p>
@@ -67,28 +68,25 @@
         </section>
 
         <!-- Notre mission -->
-        <section class="mission" style="background: var(--bg-alt);">
+        <section class="mission" style="background: var(--bg-alt); padding: 80px 0;">
             <div class="container">
-                <div class="section-title">
+                <div class="section-title" style="margin-bottom: 50px;">
                     <h2>Notre engagement</h2>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-                    <div
-                        style="background: var(--white); padding: 40px; border-radius: 15px; border-left: 5px solid var(--secondary);">
+                <div class="mission-grid">
+                    <div class="mission-card">
                         <h3>Qualité des produits</h3>
                         <p style="color: var(--text-muted); margin-top: 1rem;">Nous sélectionnons rigoureusement nos
                             verres et nos montures parmi les plus grandes marques mondiales pour vous garantir
                             durabilité et confort.</p>
                     </div>
-                    <div
-                        style="background: var(--white); padding: 40px; border-radius: 15px; border-left: 5px solid var(--secondary);">
+                    <div class="mission-card">
                         <h3>Bien-être visuel</h3>
                         <p style="color: var(--text-muted); margin-top: 1rem;">Au-delà de la correction, nous nous
                             soucions de votre confort au quotidien : fatigue numérique, protection solaire et ergonomie.
                         </p>
                     </div>
-                    <div
-                        style="background: var(--white); padding: 40px; border-radius: 15px; border-left: 5px solid var(--secondary);">
+                    <div class="mission-card">
                         <h3>Confiance et proximité</h3>
                         <p style="color: var(--text-muted); margin-top: 1rem;">Nous cultivons une relation de confiance
                             avec nos clients, basée sur la transparence des prix et un service après-vente
