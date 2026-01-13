@@ -754,7 +754,39 @@ main>section {
   }
 
   .collection-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .product-image {
+    height: 180px;
+  }
+
+  .product-info {
+    padding: 12px;
+  }
+
+  .product-title {
+    font-size: 0.95rem;
+    height: 2.8em;
+  }
+
+  .product-price {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .product-actions {
+    flex-direction: column;
+    padding: 0 10px 10px;
+    gap: 8px;
+  }
+
+  .btn-secondary,
+  .btn-primary {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.8rem;
   }
 }
 
