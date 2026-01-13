@@ -795,29 +795,47 @@ main>section {
     flex-direction: column;
   }
 
-  .mobile-filter-btn {
-    display: flex;
-  }
-
   .filter-sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 320px;
-    max-width: 85%;
-    transform: translateX(-100%);
-    margin: 0;
-    border-radius: 0;
-    overflow-y: auto;
-  }
-
-  .filter-sidebar.active {
-    transform: translateX(0);
-  }
-
-  .sidebar-header {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: static;
+    box-shadow: none;
+    border: 1px solid #eee;
+  }
+
+  .filter-group {
+    flex: 1 1 140px;
+    margin-bottom: 0;
+  }
+
+  .filter-group h4 {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+
+  .filter-option {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+
+  .price-range-container {
+    padding: 0;
+  }
+
+  .price-labels {
+    font-size: 0.75rem;
+  }
+
+  .btn-reset {
+    flex: 1 1 100%;
+    padding: 8px;
+    font-size: 0.85rem;
+    margin-top: 5px;
   }
 
   .collection-grid {

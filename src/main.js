@@ -207,30 +207,10 @@ function updateAuthUI() {
 }
 
 
-function initMobileFilter() {
-  const openBtn = document.getElementById('open-filter');
-  const closeBtn = document.getElementById('close-filter');
-  const sidebar = document.getElementById('filter-sidebar');
-  const overlay = document.getElementById('filter-overlay');
-
-  if (!openBtn || !sidebar || !overlay) return;
-
-  const toggleFilter = (active) => {
-    sidebar.classList.toggle('active', active);
-    overlay.classList.toggle('active', active);
-    document.body.style.overflow = active ? 'hidden' : '';
-  };
-
-  openBtn.addEventListener('click', () => toggleFilter(true));
-  closeBtn?.addEventListener('click', () => toggleFilter(false));
-  overlay.addEventListener('click', () => toggleFilter(false));
-}
-
 // Initialize components
 document.addEventListener('DOMContentLoaded', () => {
   initFilters();
   initHeroSlider();
   initAuth();
   updateAuthUI();
-  initMobileFilter();
 });
