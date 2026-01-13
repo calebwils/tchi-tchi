@@ -1206,7 +1206,9 @@ main>section {
   width: 48%;
   pointer-events: none;
   mix-blend-mode: multiply;
-  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.35));
+  /* Stronger shadow for realism */
+  transition: all 0.3s ease;
 }
 
 .face-selector {
