@@ -49,55 +49,67 @@
                     </div>
                 </div>
 
-                <!-- Info & Try-On Section -->
+                <!-- Info Section -->
                 <div class="product-info">
-                    <h1 id="prod-name" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 5px;">Luxe
-                        Titanium Pro</h1>
+                    <h1 id="prod-name" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 5px;">
+                        Chargement...</h1>
                     <p id="prod-price"
-                        style="font-size: 1.8rem; font-weight: 700; color: var(--secondary); margin-bottom: 25px;">
-                        125.000 FCFA</p>
+                        style="font-size: 1.8rem; font-weight: 700; color: var(--secondary); margin-bottom: 25px;">--
+                        FCFA</p>
 
-                    <div class="vto-section">
-                        <h3 style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                            <i class="fas fa-magic" style="color: var(--secondary);"></i> Essai Virtuel
-                        </h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Découvrez comment
-                            cette monture s'adapte à différents visages.</p>
+                    <div class="product-description" style="margin-bottom: 30px;">
+                        <h3
+                            style="margin-bottom: 15px; border-bottom: 2px solid var(--secondary); display: inline-block;">
+                            Description</h3>
+                        <p id="prod-desc" style="line-height: 1.6; color: var(--text-muted);">
+                            Cette monture d'exception allie élégance intemporelle et confort moderne. Fabriquée avec des
+                            matériaux de haute qualité, elle est conçue pour durer tout en affirmant votre style unique.
+                        </p>
+                    </div>
 
-                        <div class="vto-display">
-                            <img id="vto-background" src="/face-female-1.png" alt="Modèle">
-                            <img id="vto-glasses-overlay" src="/glasses-1.png" alt="Lunettes">
-                        </div>
-
-                        <div class="face-selector">
-                            <img src="/face-female-1.png" class="active"
-                                onclick="setVTOBackground(this, '/face-female-1.png')" alt="Femme 1">
-                            <img src="/face-male-1.png" onclick="setVTOBackground(this, '/face-male-1.png')"
-                                alt="Homme 1">
-                            <img src="/face-female-2.png" onclick="setVTOBackground(this, '/face-female-2.png')"
-                                alt="Femme 2">
+                    <div class="product-options" style="margin-bottom: 30px;">
+                        <h3
+                            style="margin-bottom: 15px; border-bottom: 2px solid var(--secondary); display: inline-block;">
+                            Options Disponibles</h3>
+                        <div style="display: grid; gap: 15px; margin-top: 10px;">
+                            <div
+                                style="display: flex; align-items: center; gap: 12px; background: #f8fbff; padding: 12px; border-radius: 12px; border: 1px solid #eee;">
+                                <i class="fas fa-microchip" style="color: var(--secondary);"></i>
+                                <span>Verres : Anti-lumière bleue, Polarisés, Progressifs</span>
+                            </div>
+                            <div
+                                style="display: flex; align-items: center; gap: 12px; background: #f8fbff; padding: 12px; border-radius: 12px; border: 1px solid #eee;">
+                                <i class="fas fa-palette" style="color: var(--secondary);"></i>
+                                <span>Matériaux : Acétate premium, Titane léger, Métal</span>
+                            </div>
+                            <div
+                                style="display: flex; align-items: center; gap: 12px; background: #f8fbff; padding: 12px; border-radius: 12px; border: 1px solid #eee;">
+                                <i class="fas fa-ruler-combined" style="color: var(--secondary);"></i>
+                                <span>Tailles : Ajustement personnalisé en magasin</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="detail-actions">
-                        <button class="cta-btn"><i class="fas fa-shopping-cart"></i> Ajouter au panier</button>
-                        <button class="cta-btn btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                    <div class="detail-actions" style="margin-top: 40px; display: flex; gap: 15px;">
+                        <button class="cta-btn" style="flex: 1;"><i class="fas fa-shopping-cart"></i> Commander</button>
+                        <button class="cta-btn btn-outline" style="flex: 1;"><i class="fab fa-whatsapp"></i> Conseils
+                            Opticien</button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
+    <footer style="margin-top: 100px;">
+        <div class="container footer-bottom" style="border-top: 1px solid #eee; padding-top: 30px; text-align: center;">
+            <p>&copy; 2026 Les Opticiens du Golfe – Tous droits réservés</p>
+        </div>
+    </footer>
+
     <script>
         function updateMainImage(el, src) {
             document.getElementById('main-product-img').src = src;
             document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-            el.classList.add('active');
-        }
-
-        function setVTOBackground(el, src) {
-            document.getElementById('vto-background').src = src;
-            document.querySelectorAll('.face-selector img').forEach(s => s.classList.remove('active'));
             el.classList.add('active');
         }
 
@@ -109,19 +121,17 @@
 
             document.getElementById('prod-name').innerText = name;
             document.getElementById('prod-price').innerText = price;
-            
+
             // Set initial images
             const mainImg = document.getElementById('main-product-img');
             mainImg.src = img;
-            
-            // Update the first thumbnail to the specific product image
+
+            // Update the first thumbnail
             const firstThumbImg = document.querySelector('.thumb.active img');
             if (firstThumbImg) {
                 firstThumbImg.src = img;
-                firstThumbImg.closest('.thumb').onclick = function() { updateMainImage(this, img); };
+                firstThumbImg.closest('.thumb').onclick = function () { updateMainImage(this, img); };
             }
-
-            document.getElementById('vto-glasses-overlay').src = img;
         });
     </script>
 </body>
