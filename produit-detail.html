@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails Produit | Les Opticiens du Golfe</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="/index.html" class="logo">
+                <img src="/logo-new.jpg" alt="Logo" style="height: 60px; border-radius: 5px;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/index.html">Nos produits</a></li>
+                <li><a href="/a-propos.html">À propos</a></li>
+                <li><a href="/prise-de-besoin.html">Prise de besoin</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding-top: 100px;">
+        <div class="container">
+            <div class="product-detail-grid"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px;">
+                <!-- Gallery Section -->
+                <div class="product-gallery">
+                    <div class="main-image-container"
+                        style="background: #f8fbff; border-radius: 20px; padding: 40px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; height: 500px;">
+                        <img id="main-product-img" src="/glasses-1.png" alt="Produit"
+                            style="max-width: 100%; transition: transform 0.3s ease;">
+                    </div>
+                    <div class="thumbnail-grid"
+                        style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px;">
+                        <div class="thumb active" onclick="updateMainImage('/glasses-1.png')"
+                            style="cursor: pointer; border: 2px solid var(--primary); border-radius: 10px; padding: 10px; background: #f8fbff;">
+                            <img src="/glasses-1.png" style="width: 100%;"></div>
+                        <div class="thumb"
+                            onclick="updateMainImage('https://github.com/calebwils/les-opticiens-du-golfe/blob/main/public/catalog-black.png?raw=true')"
+                            style="cursor: pointer; border: 1px solid #ddd; border-radius: 10px; padding: 10px; background: #f8fbff;">
+                            <img src="/catalog-black.png" style="width: 100%;"></div>
+                        <div class="thumb" onclick="updateMainImage('/glasses-angle-side-1_1768310324733.png')"
+                            style="cursor: pointer; border: 1px solid #ddd; border-radius: 10px; padding: 10px; background: #f8fbff;">
+                            <img src="/glasses-angle-side-1_1768310324733.png" style="width: 100%;"></div>
+                        <div class="thumb" onclick="updateMainImage('/glasses-angle-top_1_1768310365103.png')"
+                            style="cursor: pointer; border: 1px solid #ddd; border-radius: 10px; padding: 10px; background: #f8fbff;">
+                            <img src="/glasses-angle-top_1_1768310365103.png" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <!-- Info & Try-On Section -->
+                <div class="product-info">
+                    <h1 id="prod-name" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 10px;">Luxe
+                        Titanium Pro</h1>
+                    <p id="prod-price"
+                        style="font-size: 1.8rem; font-weight: 700; color: var(--secondary); margin-bottom: 25px;">
+                        125.000 FCFA</p>
+
+                    <div class="vto-section"
+                        style="background: white; border-radius: 24px; padding: 25px; border: 1px solid #eee; box-shadow: var(--shadow);">
+                        <h3 style="margin-bottom: 15px;"><i class="fas fa-magic"></i> Essai Virtuel</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Découvrez comment
+                            cette monture s'adapte à différents visages.</p>
+
+                        <div class="vto-display"
+                            style="position: relative; width: 100%; aspect-ratio: 1; background: #eee; border-radius: 15px; overflow: hidden;">
+                            <img id="vto-background" src="/model_face_female_1_1768309995627.png"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                            <img id="vto-glasses-overlay" src="/glasses-1.png"
+                                style="position: absolute; top: 38.5%; left: 50%; transform: translate(-50%, -50%); width: 45%; pointer-events: none; mix-blend-mode: multiply; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));">
+                        </div>
+
+                        <div class="face-selector" style="display: flex; gap: 10px; margin-top: 20px;">
+                            <img src="/model_face_female_1_1768309995627.png"
+                                onclick="setVTOBackground('/model_face_female_1_1768309995627.png')"
+                                style="width: 60px; height: 60px; border-radius: 50%; cursor: pointer; border: 2px solid var(--primary);">
+                            <img src="/model_face_male_1_1768310254951.png"
+                                onclick="setVTOBackground('/model_face_male_1_1768310254951.png')"
+                                style="width: 60px; height: 60px; border-radius: 50%; cursor: pointer; border: 2px solid #ddd;">
+                            <img src="/model_face_female_2_1768310104507.png"
+                                onclick="setVTOBackground('/model_face_female_2_1768310104507.png')"
+                                style="width: 60px; height: 60px; border-radius: 50%; cursor: pointer; border: 2px solid #ddd;">
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px; display: flex; gap: 15px;">
+                        <button class="cta-btn" style="flex: 1;">Ajouter au panier</button>
+                        <button class="cta-btn btn-outline" style="flex: 1;">WhatsApp Direct</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function updateMainImage(src) {
+            document.getElementById('main-product-img').src = src;
+            // Update thumbs border
+            const thumbs = document.querySelectorAll('.thumb');
+            thumbs.forEach(t => t.style.borderColor = '#ddd');
+            event.currentTarget.style.borderColor = 'var(--primary)';
+        }
+
+        function setVTOBackground(src) {
+            document.getElementById('vto-background').src = src;
+            // Update selectors border
+            const selectors = document.querySelectorAll('.face-selector img');
+            selectors.forEach(s => s.style.borderColor = '#ddd');
+            event.currentTarget.style.borderColor = 'var(--primary)';
+        }
+
+        // Simple URL data handling
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name') || 'Luxe Titanium Pro';
+            const price = params.get('price') || '125.000 FCFA';
+            const img = params.get('img') || '/glasses-1.png';
+
+            document.getElementById('prod-name').innerText = name;
+            document.getElementById('prod-price').innerText = price;
+            document.getElementById('main-product-img').src = img;
+            document.getElementById('vto-glasses-overlay').src = img;
+        });
+    </script>
+</body>
+
+</html>

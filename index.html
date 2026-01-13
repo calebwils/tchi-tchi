@@ -238,7 +238,7 @@
                 <p class="product-price">125.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -255,7 +255,7 @@
                 <p class="product-price">145.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -271,7 +271,7 @@
                 <p class="product-price"><span>95.000</span> 85.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -287,7 +287,7 @@
                 <p class="product-price">110.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -304,7 +304,7 @@
                 <p class="product-price">250.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -320,7 +320,7 @@
                 <p class="product-price">145.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -337,7 +337,7 @@
                 <p class="product-price">175.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -353,7 +353,7 @@
                 <p class="product-price">195.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -370,7 +370,7 @@
                 <p class="product-price">185.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -386,7 +386,7 @@
                 <p class="product-price">165.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -403,7 +403,7 @@
                 <p class="product-price">210.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -419,7 +419,7 @@
                 <p class="product-price">95.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -436,7 +436,7 @@
                 <p class="product-price">280.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -452,7 +452,7 @@
                 <p class="product-price">155.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -468,7 +468,7 @@
                 <p class="product-price">135.000 FCFA</p>
               </div>
               <div class="product-actions">
-                <button class="btn-secondary">Détails</button>
+                <button class="btn-secondary" onclick="viewProductDetail(this)">Détails</button>
                 <button class="btn-primary">Achat Rapide</button>
               </div>
             </article>
@@ -583,6 +583,22 @@
   </footer>
 
   <script type="module" src="/src/main.js"></script>
+  <script>
+    function viewProductDetail(btn) {
+      const card = btn.closest('.product-card');
+      const title = card.querySelector('.product-title').innerText;
+      const price = card.querySelector('.product-price').innerText;
+      const img = card.querySelector('img').getAttribute('src');
+
+      const params = new URLSearchParams({
+        name: title,
+        price: price,
+        img: img
+      });
+
+      window.location.href = `/produit-detail.html?${params.toString()}`;
+    }
+  </script>
 </body>
 
 </html>
