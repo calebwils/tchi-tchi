@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les Opticiens du Golfe | Votre spécialiste de la vision à Cotonou</title>
+  <meta name="description"
+    content="Les Opticiens du Golfe vous accompagnent dans le choix de lunettes, lentilles et solutions visuelles adaptées à vos besoins à Cotonou." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="/index.html" class="logo">
+        <img src="/logo-new.jpg" alt="Les Opticiens du Golfe Logo" style="height: 60px; border-radius: 5px;">
+      </a>
+      <button class="menu-toggle" aria-label="Menu Toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/index.html" class="active">Nos produits</a></li>
+        <li><a href="/a-propos.html">À propos</a></li>
+        <li><a href="/prise-de-besoin.html">Prise de besoin</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <!-- Visible only on mobile inside the menu -->
+        <li class="mobile-only"><a href="/contact.html" class="cta-btn">Nous contacter</a></li>
+      </ul>
+      <a href="/contact.html" class="cta-btn desktop-only">Nous contacter</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-slider">
+        <!-- Slide 1: Excellence -->
+        <div class="slide active">
+          <img src="/hero-1.png" alt="L'Excellence d'une Vision Claire">
+          <div class="hero-overlay"></div>
+          <div class="container hero-container">
+            <div class="hero-content">
+              <div class="hero-text">
+                <h1>L'Excellence d'une Vision Claire</h1>
+                <p>Votre regard mérite le meilleur. Découvrez notre expertise optique de pointe à Cotonou.</p>
+                <div class="hero-btns">
+                  <a href="/contact.html" class="cta-btn">Nous contacter</a>
+                  <a href="#collection" class="cta-btn btn-outline">Découvrir nos services</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2: Luxe & Prestige -->
+        <div class="slide">
+          <img src="/hero-2.png" alt="Collections de Luxe & Prestige">
+          <div class="hero-overlay"></div>
+          <div class="container hero-container">
+            <div class="hero-content">
+              <div class="hero-text">
+                <h1>Collections de Luxe & Prestige</h1>
+                <p>L'élégance à travers les marques les plus prestigieuses du monde.</p>
+                <div class="hero-btns">
+                  <a href="#collection" class="cta-btn">Voir la collection</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3: Protection Solaire -->
+        <div class="slide">
+          <img src="/hero-3.png" alt="Protection Solaire & Style">
+          <div class="hero-overlay"></div>
+          <div class="container hero-container">
+            <div class="hero-content">
+              <div class="hero-text">
+                <h1>Protection Solaire & Style</h1>
+                <p>Sublimez votre visage et protégez vos yeux sous le soleil de Cotonou.</p>
+                <div class="hero-btns">
+                  <a href="#collection" class="cta-btn">Nos solaires</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 4: Précision -->
+        <div class="slide">
+          <img src="/hero-4.png" alt="Précision Technologique">
+          <div class="hero-overlay"></div>
+          <div class="container hero-container">
+            <div class="hero-content">
+              <div class="hero-text">
+                <h1>Précision Technologique</h1>
+                <p>Des verres de haute technologie pour une clarté absolue et un confort inégalé.</p>
+                <div class="hero-btns">
+                  <a href="/a-propos.html" class="cta-btn">Notre expertise</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 5: Expertise -->
+        <div class="slide">
+          <img src="/hero-5.png" alt="L'Expertise à votre Service">
+          <div class="hero-overlay"></div>
+          <div class="container hero-container">
+            <div class="hero-content">
+              <div class="hero-text">
+                <h1>L'Expertise à votre Service</h1>
+                <p>Un accompagnement personnalisé par nos experts pour votre bien-être visuel.</p>
+                <div class="hero-btns">
+                  <a href="/prise-de-besoin.html" class="cta-btn">Prendre rendez-vous</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 6: Style Estival -->
+        <div class="slide">
+          <img src="/hero-6.png" alt="Style Solaire de Prestige">
+          <div class="hero-overlay"></div>
+          <div class="container hero-container">
+            <div class="hero-content">
+              <div class="hero-text">
+                <h1>Le Style sous le Soleil</h1>
+                <p>Une protection optimale avec une élégance incomparable. Découvrez nos dernières tendances solaires.
+                </p>
+                <div class="hero-btns">
+                  <a href="/contact.html" class="cta-btn">En savoir plus</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 7: Élégance Minimaliste -->
+        <div class="slide">
+          <img src="/hero-7.png" alt="Élégance Minimaliste">
+          <div class="hero-overlay"></div>
+          <div class="container hero-container">
+            <div class="hero-content">
+              <div class="hero-text">
+                <h1>Élégance Minimaliste</h1>
+                <p>La beauté dans la simplicité. Des montures épurées pour un regard affirmé.</p>
+                <div class="hero-btns">
+                  <a href="/contact.html" class="cta-btn">Nous contacter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="4"></span>
+        <span class="dot" data-index="5"></span>
+        <span class="dot" data-index="6"></span>
+      </div>
+    </section>
+
+
+    <!-- Section 3: Collection Vedette (E-commerce) -->
+    <section class="collection" style="background: var(--bg-alt);">
+      <div class="container">
+        <div class="section-title">
+          <h2>Collection Vedette</h2>
+          <p>Découvrez notre sélection exclusive de montures premium</p>
+        </div>
+
+        <div class="collection-layout">
+          <!-- Sidebar Filtres -->
+          <aside class="filter-sidebar">
+            <div class="filter-group">
+              <h4>Catégorie</h4>
+              <label class="filter-option">
+                <input type="checkbox" name="category" value="Optique" checked> Optique
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="category" value="Solaire" checked> Solaire
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="category" value="Lentilles" checked> Lentilles
+              </label>
+            </div>
+
+            <div class="filter-group">
+              <h4>Genre</h4>
+              <label class="filter-option">
+                <input type="checkbox" name="gender" value="Hommes" checked> Hommes
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="gender" value="Femmes" checked> Femmes
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="gender" value="Unisexe" checked> Unisexe
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="gender" value="Enfant" checked> Enfant
+              </label>
+            </div>
+
+            <div class="filter-group">
+              <h4>Prix Max (FCFA)</h4>
+              <div class="price-range-container">
+                <input type="range" id="price-slider" min="50000" max="300000" step="5000" value="300000">
+                <div class="price-labels">
+                  <span>50k</span>
+                  <span id="price-value">300.000</span>
+                  <span>300k</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-reset" id="reset-filters">Réinitialiser</button>
+          </aside>
+
+          <div class="collection-grid">
+            <!-- Produit 1 -->
+            <article class="product-card" data-category="Optique" data-gender="Hommes" data-price="125000">
+              <div class="product-image">
+                <span class="badge badge-new">Nouveau</span>
+                <img src="/glasses-1.png" alt="Barton Perreira Classic">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Hommes | Optique</p>
+                <h3 class="product-title">Barton Perreira Classic</h3>
+                <p class="product-price">125.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 2 -->
+            <article class="product-card" data-category="Optique" data-gender="Femmes" data-price="145000">
+              <div class="product-image">
+                <span class="badge badge-hot">Populaire</span>
+                <img src="/glasses-2.png" alt="Cat-Eye Elegance Gold">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Femmes | Optique</p>
+                <h3 class="product-title">Cat-Eye Elegance Gold</h3>
+                <p class="product-price">145.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 3 -->
+            <article class="product-card" data-category="Solaire" data-gender="Unisexe" data-price="85000">
+              <div class="product-image">
+                <img src="/glasses-3.png" alt="Modern Aviator Blue">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Unisexe | Solaire</p>
+                <h3 class="product-title">Modern Aviator Blue</h3>
+                <p class="product-price"><span>95.000</span> 85.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 4 -->
+            <article class="product-card" data-category="Optique" data-gender="Unisexe" data-price="110000">
+              <div class="product-image">
+                <img src="/glasses-4.png" alt="Minimalist Round Crystal">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Unisexe | Cristal</p>
+                <h3 class="product-title">Minimalist Round Crystal</h3>
+                <p class="product-price">110.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 5 -->
+            <article class="product-card" data-category="Optique" data-gender="Hommes" data-price="250000">
+              <div class="product-image">
+                <span class="badge badge-new">Prestige</span>
+                <img src="/glasses-5.png" alt="Cartier Rimless Gold">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Hommes | Optique</p>
+                <h3 class="product-title">Cartier Rimless Gold</h3>
+                <p class="product-price">250.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 6 -->
+            <article class="product-card" data-category="Optique" data-gender="Femmes" data-price="145000">
+              <div class="product-image">
+                <img src="/glasses-6.png" alt="Tortoise Shell Designer">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Femmes | Optique</p>
+                <h3 class="product-title">Tortoise Shell Designer</h3>
+                <p class="product-price">145.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 7 -->
+            <article class="product-card" data-category="Solaire" data-gender="Femmes" data-price="175000">
+              <div class="product-image">
+                <span class="badge badge-hot">Solaire</span>
+                <img src="/glasses-7.png" alt="Emerald Green Oversized">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Femmes | Solaire</p>
+                <h3 class="product-title">Emerald Green Oversized</h3>
+                <p class="product-price">175.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 8 -->
+            <article class="product-card" data-category="Optique" data-gender="Hommes" data-price="195000">
+              <div class="product-image">
+                <img src="/glasses-8.png" alt="Titanium Matte Black">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Hommes | Optique</p>
+                <h3 class="product-title">Titanium Matte Black</h3>
+                <p class="product-price">195.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 9 -->
+            <article class="product-card" data-category="Optique" data-gender="Femmes" data-price="185000">
+              <div class="product-image">
+                <span class="badge badge-new">Nouveau</span>
+                <img src="/glasses-9.png" alt="Rose Gold Cat-Eye">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Femmes | Optique</p>
+                <h3 class="product-title">Rose Gold Cat-Eye</h3>
+                <p class="product-price">185.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 10 -->
+            <article class="product-card" data-category="Optique" data-gender="Unisexe" data-price="165000">
+              <div class="product-image">
+                <img src="/glasses-10.png" alt="Silver Geometric Metal">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Unisexe | Optique</p>
+                <h3 class="product-title">Silver Geometric Metal</h3>
+                <p class="product-price">165.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 11 -->
+            <article class="product-card" data-category="Optique" data-gender="Unisexe" data-price="210000">
+              <div class="product-image">
+                <span class="badge badge-new">Eco-Luxe</span>
+                <img src="/glasses-11.png" alt="Premium Wood-Grain">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Unisexe | Optique</p>
+                <h3 class="product-title">Premium Wood-Grain</h3>
+                <p class="product-price">210.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 12 -->
+            <article class="product-card" data-category="Optique" data-gender="Unisexe" data-price="95000">
+              <div class="product-image">
+                <img src="/glasses-12.png" alt="Blue Light Tech">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Unisexe | Tech</p>
+                <h3 class="product-title">Blue Light Tech</h3>
+                <p class="product-price">95.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 13 -->
+            <article class="product-card" data-category="Solaire" data-gender="Hommes" data-price="280000">
+              <div class="product-image">
+                <span class="badge badge-new">18K Gold</span>
+                <img src="/glasses-13.png" alt="Classic Gold Aviator">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Hommes | Solaire</p>
+                <h3 class="product-title">Classic Gold Aviator</h3>
+                <p class="product-price">280.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 14 -->
+            <article class="product-card" data-category="Optique" data-gender="Femmes" data-price="155000">
+              <div class="product-image">
+                <img src="/glasses-14.png" alt="Bold Red Statement">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Femmes | Optique</p>
+                <h3 class="product-title">Bold Red Statement</h3>
+                <p class="product-price">155.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 15 -->
+            <article class="product-card" data-category="Optique" data-gender="Hommes" data-price="135000">
+              <div class="product-image">
+                <img src="/glasses-15.png" alt="Industrial Titanium">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Hommes | Optique</p>
+                <h3 class="product-title">Industrial Titanium</h3>
+                <p class="product-price">135.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+
+            <!-- Produit 16 (Enfant) -->
+            <article class="product-card" data-category="Optique" data-gender="Enfant" data-price="65000">
+              <div class="product-image">
+                <span class="badge badge-new">Junior</span>
+                <img src="/glasses-kid-1.png" alt="Petit Explorateur Coloré">
+              </div>
+              <div class="product-info">
+                <p class="product-category">Enfant | Optique</p>
+                <h3 class="product-title">Petit Explorateur Coloré</h3>
+                <p class="product-price">65.000 FCFA</p>
+              </div>
+              <div class="product-actions">
+                <button class="btn-secondary">Détails</button>
+                <button class="btn-primary">Achat Rapide</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+          <a href="#collection" class="cta-btn"
+            style="background: transparent; color: var(--primary); border: 2px solid var(--primary);">Voir tout le
+            catalogue</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Galerie de Prestige -->
+    <section class="prestige-gallery">
+      <div class="container">
+        <div class="section-title">
+          <h2>Galerie de Prestige</h2>
+          <p>L'élégance et le style à travers nos collections premium</p>
+        </div>
+      </div>
+      <div class="gallery-wrapper">
+        <div class="gallery-scroll">
+          <div class="gallery-item">
+            <img src="/gallery-1.png" alt="Style Antique Gold">
+            <div class="gallery-overlay">
+              <span>Collection Optique</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/gallery-2.png" alt="Élégance Solaire">
+            <div class="gallery-overlay">
+              <span>Collection Solaire</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/gallery-3.png" alt="Minimalisme Moderne">
+            <div class="gallery-overlay">
+              <span>Collection Titanium</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/gallery-4.png" alt="Style Urbain">
+            <div class="gallery-overlay">
+              <span>Collection Street</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/gallery-5.png" alt="Prestige Professionnel">
+            <div class="gallery-overlay">
+              <span>Collection Business</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/gallery-6.png" alt="Excellence Professionnelle">
+            <div class="gallery-overlay">
+              <span>Collection Executive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container-fw">
+      <div class="container footer-content">
+        <div class="footer-section">
+          <img src="/logo-new.jpg" alt="Les Opticiens du Golfe Logo"
+            style="height: 60px; border-radius: 5px; margin-bottom: 15px;">
+          <h3 style="color: var(--white);">Les Opticiens du Golfe</h3>
+          <p>Votre partenaire de confiance pour une vision claire et protégée à Cotonou.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>148-149 Avleke – Codji</p>
+          <p>Gbedokpo, Cotonou – Bénin</p>
+          <p>+229 01 67 96 19 19</p>
+          <p>+229 01 61 63 10 10</p>
+        </div>
+        <div class="footer-section">
+          <h3>Horaires</h3>
+          <p>Lun - Ven: 08:30 - 19:00</p>
+          <p>Samedi: 09:00 - 17:00</p>
+          <p>Dimanche: Fermé</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Les Opticiens du Golfe – Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

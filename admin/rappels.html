@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rappels Clients | Les Opticiens du Golfe</title>
+    <link rel="stylesheet" href="/src/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+    <aside class="admin-sidebar">
+        <div class="admin-logo">
+            <img src="/logo-new.jpg" alt="Les Opticiens du Golfe">
+        </div>
+        <nav>
+            <ul class="admin-nav">
+                <li><a href="/admin/dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="/admin/clients.html"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a href="/admin/stock.html"><i class="fas fa-box-open"></i> Stocks</a></li>
+                <li><a href="/admin/besoins.html"><i class="fas fa-clipboard-list"></i> Prise de Besoins</a></li>
+                <li class="active"><a href="/admin/rappels.html"><i class="fas fa-bell"></i> Rappels Clients</a></li>
+                <li><a href="/admin/ventes.html"><i class="fas fa-file-invoice-dollar"></i> Ventes</a></li>
+            </ul>
+        </nav>
+        <div class="admin-sidebar-footer"
+            style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="/index.html" class="logout-link"
+                style="color: #ff4d4d; text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main" style="margin-left: 240px;">
+        <header class="admin-header">
+            <div class="header-left">
+                <h1>Rappels & Renouvellements</h1>
+                <p>Suivi proactif des clients arrivant en fin de validité de verres</p>
+            </div>
+
+            <div class="admin-header-right">
+                <button class="admin-btn" style="background: var(--admin-accent);"><i class="fas fa-file-export"></i>
+                    Exporter la liste</button>
+            </div>
+        </header>
+
+        <!-- Reminder Stats -->
+        <section class="admin-stats-grid" style="margin-bottom: 2rem;">
+            <div class="stat-card" style="border-left: 4px solid var(--admin-accent);">
+                <div class="stat-icon" style="background: rgba(187, 161, 79, 0.1); color: var(--admin-accent);"><i
+                        class="fas fa-clock"></i></div>
+                <div class="stat-info">
+                    <h3>Bientôt Expiré (30j)</h3>
+                    <p>8</p>
+                </div>
+            </div>
+            <div class="stat-card" style="border-left: 4px solid #ef4444;">
+                <div class="stat-icon" style="background: #fee2e2; color: #991b1b;"><i class="fas fa-history"></i></div>
+                <div class="stat-info">
+                    <h3>Total Expirés</h3>
+                    <p>24</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #e8f5e9; color: #388e3c;"><i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Contactés ce mois</h3>
+                    <p>15</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reminders Table -->
+        <section class="admin-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="margin: 0;">Liste de Relance Automatique</h2>
+                <div style="display: flex; gap: 10px;">
+                    <select class="admin-input"
+                        style="padding: 0.5rem; border-radius: 8px; border: 1px solid var(--admin-border);">
+                        <option>Trier par Urgence</option>
+                        <option>Par Nom</option>
+                        <option>Date d'expiration</option>
+                    </select>
+                </div>
+            </div>
+
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Client / Téléphone</th>
+                        <th>Expiration Verres</th>
+                        <th>Délai Restant</th>
+                        <th>Statut</th>
+                        <th>Dernier Contact</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Marie Kouassi</strong><br>
+                            <small>+229 90 00 00 02</small>
+                        </td>
+                        <td>20/12/2024</td>
+                        <td><span style="color: #c53030; font-weight: 700;">-23 jours</span></td>
+                        <td><span class="badge badge-danger">Expiré</span></td>
+                        <td>Jamais</td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-icon" style="background: #25D366;"
+                                    title="Envoyer WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="admin-btn admin-btn-icon" title="Noter comme contacté"><i
+                                        class="fas fa-check"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Jean Dupont</strong><br>
+                            <small>+229 90 00 00 01</small>
+                        </td>
+                        <td>15/03/2025</td>
+                        <td><span style="color: #9c4221; font-weight: 700;">62 jours</span></td>
+                        <td><span class="badge badge-warning">Prochainement</span></td>
+                        <td>12/10/2024 (Appel)</td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-icon" style="background: #25D366;"
+                                    title="Envoyer WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="admin-btn admin-btn-icon" title="Noter comme contacté"><i
+                                        class="fas fa-check"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Bernard Toko</strong><br>
+                            <small>+229 97 12 34 56</small>
+                        </td>
+                        <td>02/02/2025</td>
+                        <td><span style="color: #c53030; font-weight: 700;">21 jours</span></td>
+                        <td><span class="badge badge-warning">URGENT</span></td>
+                        <td>Jamais</td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-icon" style="background: #25D366;"
+                                    title="Envoyer WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="admin-btn admin-btn-icon" title="Noter comme contacté"><i
+                                        class="fas fa-check"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Message Templates (Mini Card) -->
+        <section class="admin-card" style="margin-top: 2rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 1.5rem; color: var(--admin-primary);"><i
+                    class="fas fa-comment-dots"></i> Modèles de messages suggérés</h3>
+            <div
+                style="background: #f8fafc; padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--admin-accent);">
+                <p style="font-style: italic; color: var(--admin-text-light); font-size: 0.9rem;">
+                    "Bonjour [Nom Client], vos lunettes arrivent en fin de validité clinique. Nous vous invitons à
+                    passer aux **Opticiens du Golfe** pour un contrôle visuel gratuit et découvrir nos nouvelles
+                    collections."
+                </p>
+                <button class="admin-btn" style="margin-top: 1rem; font-size: 0.8rem;"><i class="fas fa-copy"></i>
+                    Copier le modèle</button>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

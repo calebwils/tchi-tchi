@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventes & Devis | Les Opticiens du Golfe</title>
+    <link rel="stylesheet" href="/src/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+    <aside class="admin-sidebar">
+        <div class="admin-logo">
+            <img src="/logo-new.jpg" alt="Les Opticiens du Golfe">
+        </div>
+        <nav>
+            <ul class="admin-nav">
+                <li><a href="/admin/dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="/admin/clients.html"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a href="/admin/stock.html"><i class="fas fa-box-open"></i> Stocks</a></li>
+                <li><a href="/admin/besoins.html"><i class="fas fa-clipboard-list"></i> Prise de Besoins</a></li>
+                <li><a href="/admin/rappels.html"><i class="fas fa-bell"></i> Rappels Clients</a></li>
+                <li class="active"><a href="/admin/ventes.html"><i class="fas fa-file-invoice-dollar"></i> Ventes</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="admin-sidebar-footer"
+            style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="/index.html" class="logout-link"
+                style="color: #ff4d4d; text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main" style="margin-left: 240px;">
+        <header class="admin-header">
+            <div class="header-left">
+                <h1>Ventes & Facturation</h1>
+                <p>Suivez votre chiffre d'affaires et générez des devis professionnels</p>
+            </div>
+
+            <div class="admin-header-right">
+                <button class="admin-btn" onclick="openModal('new-sale-modal')"><i class="fas fa-plus"></i> Nouvelle
+                    Vente</button>
+            </div>
+        </header>
+
+        <!-- Revenue Charts Placeholder -->
+        <section class="admin-grid"
+            style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+            <div class="admin-card">
+                <h2 style="font-size: 1.1rem; margin-bottom: 1.5rem;">Évolution des Ventes (7 derniers jours)</h2>
+                <div style="height: 200px; display: flex; align-items: flex-end; gap: 15px; padding: 20px 0;">
+                    <!-- Simple CSS Bar Chart -->
+                    <div style="flex: 1; background: #e2e8f0; height: 40%; border-radius: 8px; position: relative;"
+                        title="Lun"></div>
+                    <div style="flex: 1; background: #e2e8f0; height: 60%; border-radius: 8px; position: relative;"
+                        title="Mar"></div>
+                    <div style="flex: 1; background: #e2e8f0; height: 35%; border-radius: 8px; position: relative;"
+                        title="Mer"></div>
+                    <div style="flex: 1; background: var(--admin-accent); height: 85%; border-radius: 8px; position: relative;"
+                        title="Jeu"></div>
+                    <div style="flex: 1; background: #e2e8f0; height: 50%; border-radius: 8px; position: relative;"
+                        title="Ven"></div>
+                    <div style="flex: 1; background: #e2e8f0; height: 95%; border-radius: 8px; position: relative;"
+                        title="Sam"></div>
+                    <div style="flex: 1; background: var(--admin-primary); height: 20%; border-radius: 8px; position: relative;"
+                        title="Dim"></div>
+                </div>
+                <div
+                    style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--admin-text-light); margin-top: 10px;">
+                    <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <h2 style="font-size: 1.1rem; margin-bottom: 1.5rem;">Objectif Mensuel</h2>
+                <div style="text-align: center; padding: 20px 0;">
+                    <div
+                        style="width: 120px; height: 120px; border-radius: 50%; border: 12px solid #f1f5f9; border-top-color: var(--admin-accent); margin: 0 auto; display: flex; align-items: center; justify-content: center; transform: rotate(45deg);">
+                        <span
+                            style="transform: rotate(-45deg); font-weight: 700; font-size: 1.2rem; color: var(--admin-primary);">68%</span>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-weight: 600;">3.4M / 5.0M CFA</p>
+                    <small style="color: var(--admin-text-light);">Encore 1.6M CFA pour atteindre l'objectif</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sales History -->
+        <section class="admin-card">
+            <h2 style="margin-bottom: 2rem;">Historique des Transactions</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>N° Facture</th>
+                        <th>Client</th>
+                        <th>Détails de la vente</th>
+                        <th>Montant HT</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#FAC-2024-001</td>
+                        <td><strong>Jean Dupont</strong></td>
+                        <td>GUCCI GC1234 + Verres Progressifs</td>
+                        <td>325 000 CFA</td>
+                        <td>12/10/2024</td>
+                        <td><button class="admin-btn admin-btn-icon"><i class="fas fa-file-pdf"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>#FAC-2024-002</td>
+                        <td><strong>Marie Kouassi</strong></td>
+                        <td>CHANEL CH5432 + Anti-Reflets</td>
+                        <td>285 000 CFA</td>
+                        <td>05/11/2024</td>
+                        <td><button class="admin-btn admin-btn-icon"><i class="fas fa-file-pdf"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- Modal Nouvelle Vente -->
+    <div class="modal-overlay" id="new-sale-modal">
+        <div class="admin-modal">
+            <div class="modal-header">
+                <h2>Enregistrer une Transaction</h2>
+                <i class="fas fa-times close-modal" onclick="closeModal('new-sale-modal')"></i>
+            </div>
+            <form id="new-sale-form">
+                <div class="admin-form-group">
+                    <label>Sélectionner le Client</label>
+                    <select class="admin-form-input">
+                        <option>Jean Dupont (+229 90...)</option>
+                        <option>Marie Kouassi (+229 90...)</option>
+                        <option>Nouveau client...</option>
+                    </select>
+                </div>
+                <div class="admin-form-group">
+                    <label>Monture</label>
+                    <select class="admin-form-input">
+                        <option>GUCCI GC1234 (Stock: 15)</option>
+                        <option>RAY-BAN RB2132 (Stock: 2)</option>
+                        <option>Monture client (Adaptation)</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Type de Verres</label>
+                        <input type="text" class="admin-form-input" placeholder="ex: Progressifs Nikon">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Prix Total (CFA)</label>
+                        <input type="number" class="admin-form-input" placeholder="250000">
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 1rem;">
+                    <button type="button" class="admin-btn" style="background: #e2e8f0; color: var(--admin-text);"
+                        onclick="closeModal('new-sale-modal')">Annuler</button>
+                    <button type="submit" class="admin-btn" style="background: var(--admin-accent);"><i
+                            class="fas fa-print"></i> Générer Devis/Facture</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/src/admin.js"></script>
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+        document.getElementById('new-sale-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Facture générée avec succès ! (Simulation PDF)');
+            closeModal('new-sale-modal');
+        });
+    </script>
+</body>
+
+</html>

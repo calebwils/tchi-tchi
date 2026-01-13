@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Espace | Les Opticiens du Golfe</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="/index.html" class="logo">
+                <img src="/logo-new.jpg" alt="Logo" style="height: 60px; border-radius: 5px;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/index.html">Nos produits</a></li>
+                <li><a href="/a-propos.html">À propos</a></li>
+                <li><a href="/prise-de-besoin.html">Prise de besoin</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <a href="#" id="dashboard-logout" class="cta-btn btn-outline">Déconnexion</a>
+        </div>
+    </nav>
+
+    <main style="padding-top: 120px; min-height: 80vh;">
+        <div class="container">
+            <div class="welcome-banner"
+                style="background: var(--primary); color: white; padding: 40px; border-radius: var(--radius-lg); margin-bottom: 40px;">
+                <h1 id="welcome-name">Bienvenue</h1>
+                <p>Heureux de vous revoir dans votre espace personnel Les Opticiens du Golfe.</p>
+            </div>
+
+            <div class="dashboard-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="dashboard-card"
+                    style="background: white; padding: 30px; border-radius: var(--radius-md); box-shadow: var(--shadow);">
+                    <h3><i class="fas fa-history" style="color: var(--secondary);"></i> Mes Besoins</h3>
+                    <p style="color: var(--text-muted); margin: 15px 0;">Consultez vos demandes de prise de besoin et
+                        suivis.</p>
+                    <a href="/prise-de-besoin.html" class="cta-btn"
+                        style="padding: 10px 20px; font-size: 0.9rem;">Nouvelle demande</a>
+                </div>
+
+                <div class="dashboard-card"
+                    style="background: white; padding: 30px; border-radius: var(--radius-md); box-shadow: var(--shadow);">
+                    <h3><i class="fas fa-user-edit" style="color: var(--secondary);"></i> Mon Profil</h3>
+                    <p style="color: var(--text-muted); margin: 15px 0;">Mettez à jour vos informations personnelles.
+                    </p>
+                    <a href="#" class="cta-btn btn-outline" style="padding: 10px 20px; font-size: 0.9rem;">Modifier</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (!currentUser) {
+                window.location.href = '/auth.html';
+                return;
+            }
+            document.getElementById('welcome-name').textContent = `Bienvenue, ${currentUser.name}`;
+
+            document.getElementById('dashboard-logout').addEventListener('click', (e) => {
+                e.preventDefault();
+                localStorage.removeItem('currentUser');
+                window.location.href = '/index.html';
+            });
+        });
+    </script>
+</body>
+
+</html>

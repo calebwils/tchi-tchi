@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prise de besoin | Les Opticiens du Golfe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        .form-step {
+            margin-bottom: 40px;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-step h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .option-card {
+            border: 2px solid #E2E8F0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .option-card:hover {
+            border-color: var(--secondary);
+            background: var(--bg-alt);
+        }
+
+        .option-card input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .option-card.selected {
+            border-color: var(--primary);
+            background: #ebf4ff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="/" class="logo">
+                <img src="/logo-new.jpg" alt="Les Opticiens du Golfe Logo" style="height: 60px; border-radius: 5px;">
+            </a>
+            <button class="menu-toggle" aria-label="Menu Toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/index.html">Nos produits</a></li>
+                <li><a href="/a-propos.html">À propos</a></li>
+                <li><a href="/prise-de-besoin.html" class="active">Prise de besoin</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li class="mobile-only"><a href="/contact.html" class="cta-btn">Nous contacter</a></li>
+            </ul>
+            <a href="/contact.html" class="cta-btn desktop-only">Nous contacter</a>
+        </div>
+    </nav>
+
+    <main style="padding-top: 100px;">
+        <!-- Hero Header -->
+        <section class="page-header"
+            style="background: var(--primary); color: var(--white); text-align: center; padding: 60px 0;">
+            <div class="container">
+                <h1>Précisez votre besoin</h1>
+                <p style="opacity: 0.8;">Aidez-nous à mieux vous servir en répondant à ces 3 questions</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="container" style="max-width: 800px;">
+                <form id="besoin-form">
+                    <!-- Question 1 -->
+                    <div class="form-step">
+                        <h3>1. Quel type de produit ou service recherchez-vous ?</h3>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="service" value="Lunettes de vue" required>
+                                <span>Lunettes de vue</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="service" value="Lunettes de soleil">
+                                <span>Lunettes de soleil</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="service" value="Lentilles de contact">
+                                <span>Lentilles de contact</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="service" value="Consultation">
+                                <span>Consultation optométrique</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="service" value="Reparation">
+                                <span>Réparation / Entretien</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="service" value="Autre">
+                                <span>Autre</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="form-step">
+                        <h3>2. Quelle est votre principale préoccupation ?</h3>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="concern" value="Correction" required>
+                                <span>Correction de la vue</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="concern" value="Protection">
+                                <span>Protection solaire</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="concern" value="Confort">
+                                <span>Confort et ajustement</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="concern" value="Esthetique">
+                                <span>Esthétique et style</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="concern" value="Autre">
+                                <span>Autre</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="form-step">
+                        <h3>3. Quel budget envisagez-vous ?</h3>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="Entree" required>
+                                <span>Entrée de gamme</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="Moyenne">
+                                <span>Moyenne gamme</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="Haut">
+                                <span>Haut de gamme / Marques</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 40px;">
+                        <button type="submit" class="cta-btn"
+                            style="border: none; padding: 1.2rem 4rem; cursor: pointer; font-size: 1.1rem;">Envoyer ma
+                            demande</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <img src="/logo-new.jpg" alt="Les Opticiens du Golfe Logo"
+                    style="height: 60px; border-radius: 5px; margin-bottom: 15px;">
+                <h3 style="color: var(--white);">Les Opticiens du Golfe</h3>
+                <p>Votre partenaire de confiance pour une vision claire et protégée à Cotonou.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>148-149 Avleke – Codji</p>
+                <p>Gbedokpo, Cotonou – Bénin</p>
+                <p>+229 01 67 96 19 19</p>
+                <p>+229 01 61 63 10 10</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horaires</h3>
+                <p>Lun - Ven: 08:30 - 19:00</p>
+                <p>Samedi: 09:00 - 17:00</p>
+                <p>Dimanche: Fermé</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Les Opticiens du Golfe – Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        // Add visual feedback for selected options
+        document.querySelectorAll('.option-card input').forEach(input => {
+            input.addEventListener('change', (e) => {
+                const name = e.target.name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(i => {
+                    i.parentElement.classList.remove('selected');
+                });
+                if (e.target.checked) {
+                    e.target.parentElement.classList.add('selected');
+                }
+            });
+        });
+
+        document.getElementById('besoin-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci ! Votre demande a été reçue. Nous vous contacterons très prochainement.');
+            e.target.reset();
+            document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+        });
+    </script>
+</body>
+
+</html>

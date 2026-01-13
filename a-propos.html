@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À propos | Les Opticiens du Golfe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="/" class="logo">
+                <img src="/logo-new.jpg" alt="Les Opticiens du Golfe Logo" style="height: 60px; border-radius: 5px;">
+            </a>
+            <button class="menu-toggle" aria-label="Menu Toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/index.html">Nos produits</a></li>
+                <li><a href="/a-propos.html" class="active">À propos</a></li>
+                <li><a href="/prise-de-besoin.html">Prise de besoin</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li class="mobile-only"><a href="/contact.html" class="cta-btn">Nous contacter</a></li>
+            </ul>
+            <a href="/contact.html" class="cta-btn desktop-only">Nous contacter</a>
+        </div>
+    </nav>
+
+    <main style="padding-top: 100px;">
+        <!-- Hero Header -->
+        <section class="page-header"
+            style="background: var(--primary); color: var(--white); text-align: center; padding: 60px 0;">
+            <div class="container">
+                <h1>À propos de nous</h1>
+                <p style="opacity: 0.8;">Découvrez l'histoire et les engagements des Opticiens du Golfe</p>
+            </div>
+        </section>
+
+        <!-- Qui sommes-nous -->
+        <section class="about-content">
+            <div class="container"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop"
+                        alt="Notre équipe" style="border-radius: 20px; box-shadow: var(--shadow-lg);">
+                </div>
+                <div class="about-text">
+                    <h2 style="color: var(--primary); margin-bottom: 1.5rem;">Qui sommes-nous ?</h2>
+                    <p style="margin-bottom: 1.5rem;">Situés au cœur de Cotonou, **Les Opticiens du Golfe** sont nés
+                        d'une passion pour la santé visuelle et le design. Nous croyons que bien voir est essentiel pour
+                        bien vivre, et que chaque client mérite une solution parfaitement adaptée à son mode de vie.</p>
+                    <p style="margin-bottom: 1.5rem;">Notre équipe d'opticiens-lunetiers diplômés met son expertise à
+                        votre service pour vous offrir un bilan visuel précis et des conseils esthétiques pointus. Que
+                        vous recherchiez la performance technique ou le style intemporel, nous saurons vous accompagner.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notre mission -->
+        <section class="mission" style="background: var(--bg-alt);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Notre engagement</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                    <div
+                        style="background: var(--white); padding: 40px; border-radius: 15px; border-left: 5px solid var(--secondary);">
+                        <h3>Qualité des produits</h3>
+                        <p style="color: var(--text-muted); margin-top: 1rem;">Nous sélectionnons rigoureusement nos
+                            verres et nos montures parmi les plus grandes marques mondiales pour vous garantir
+                            durabilité et confort.</p>
+                    </div>
+                    <div
+                        style="background: var(--white); padding: 40px; border-radius: 15px; border-left: 5px solid var(--secondary);">
+                        <h3>Bien-être visuel</h3>
+                        <p style="color: var(--text-muted); margin-top: 1rem;">Au-delà de la correction, nous nous
+                            soucions de votre confort au quotidien : fatigue numérique, protection solaire et ergonomie.
+                        </p>
+                    </div>
+                    <div
+                        style="background: var(--white); padding: 40px; border-radius: 15px; border-left: 5px solid var(--secondary);">
+                        <h3>Confiance et proximité</h3>
+                        <p style="color: var(--text-muted); margin-top: 1rem;">Nous cultivons une relation de confiance
+                            avec nos clients, basée sur la transparence des prix et un service après-vente
+                            irréprochable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <img src="/logo-new.jpg" alt="Les Opticiens du Golfe Logo"
+                    style="height: 60px; border-radius: 5px; margin-bottom: 15px;">
+                <h3 style="color: var(--white);">Les Opticiens du Golfe</h3>
+                <p>Votre partenaire de confiance pour une vision claire et protégée à Cotonou.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>148-149 Avleke – Codji</p>
+                <p>Gbedokpo, Cotonou – Bénin</p>
+                <p>+229 01 67 96 19 19</p>
+                <p>+229 01 61 63 10 10</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horaires</h3>
+                <p>Lun - Ven: 08:30 - 19:00</p>
+                <p>Samedi: 09:00 - 17:00</p>
+                <p>Dimanche: Fermé</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Les Opticiens du Golfe – Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

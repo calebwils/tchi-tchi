@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prise de Besoins | Les Opticiens du Golfe</title>
+    <link rel="stylesheet" href="/src/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+    <aside class="admin-sidebar">
+        <div class="admin-logo">
+            <img src="/logo-new.jpg" alt="Les Opticiens du Golfe">
+        </div>
+        <nav>
+            <ul class="admin-nav">
+                <li><a href="/admin/dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="/admin/clients.html"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a href="/admin/stock.html"><i class="fas fa-box-open"></i> Stocks</a></li>
+                <li class="active"><a href="/admin/besoins.html"><i class="fas fa-clipboard-list"></i> Prise de
+                        Besoins</a></li>
+                <li><a href="/admin/rappels.html"><i class="fas fa-bell"></i> Rappels Clients</a></li>
+                <li><a href="/admin/ventes.html"><i class="fas fa-file-invoice-dollar"></i> Ventes</a></li>
+            </ul>
+        </nav>
+        <div class="admin-sidebar-footer"
+            style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="/index.html" class="logout-link"
+                style="color: #ff4d4d; text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="header-left">
+                <h1>Prise de Besoins</h1>
+                <p>Récapitulatif des formulaires clients envoyés en ligne</p>
+            </div>
+
+            <div class="admin-header-right" style="display: flex; align-items: center; gap: 20px;">
+                <div class="search-bar"
+                    style="background: white; padding: 0.6rem 1.2rem; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 10px; width: 300px;">
+                    <i class="fas fa-search" style="color: #94a3b8;"></i>
+                    <input type="text" id="besoin-search" placeholder="Nom du client...">
+                </div>
+            </div>
+        </header>
+
+        <!-- Summary Statistics -->
+        <section class="admin-stats-grid" style="margin-bottom: 2rem;">
+            <div class="stat-card" style="background: var(--admin-primary); color: white;">
+                <div class="stat-info" style="text-align: center; width: 100%;">
+                    <h3 style="color: rgba(255,255,255,0.7);">Aujourd'hui</h3>
+                    <p style="color: white;">4</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #fff7ed; color: #c2410c;"><i class="fas fa-clock"></i></div>
+                <div class="stat-info">
+                    <h3>En attente</h3>
+                    <p>12</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #f0fdf4; color: #15803d;"><i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Traités (Semaine)</h3>
+                    <p>45</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="admin-card" style="margin-bottom: 2rem; padding: 1.5rem;">
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <span style="font-weight: 600; color: var(--admin-text-light);">Filtrer par statut :</span>
+                <select class="admin-form-input" style="width: auto; padding: 0.5rem 1rem;">
+                    <option>Toutes les soumissions</option>
+                    <option>Nouveau 🔵</option>
+                    <option>En cours 🟠</option>
+                    <option>Traité ✅</option>
+                </select>
+                <button class="admin-btn" style="background: #f1f5f9; color: var(--admin-text);"><i
+                        class="fas fa-download"></i> Exporter CSV</button>
+            </div>
+        </section>
+
+        <!-- Assessment List -->
+        <section class="admin-card">
+            <h2 style="margin-bottom: 2rem;">Dernières Soumissions</h2>
+
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Client / Date</th>
+                        <th>Profil & Style</th>
+                        <th>Usage Principal</th>
+                        <th>Budget Estimatif</th>
+                        <th>Statut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Alice Zinsou</strong><br>
+                            <small>Aujourd'hui, 09:45</small><br>
+                            <small style="color: var(--admin-accent);"><i class="fas fa-phone"></i> +229 90 00 00
+                                03</small>
+                        </td>
+                        <td>
+                            <span class="badge" style="background: #f1f5f9; color: var(--admin-primary);">Luxe /
+                                Élégant</span>
+                        </td>
+                        <td>Ordinateur (Anti-lumière bleue)</td>
+                        <td style="font-weight: 600; color: var(--admin-accent);">150k - 250k CFA</td>
+                        <td><span class="badge" style="background: #dbeafe; color: #1e40af;">Nouveau</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-icon" title="Détails"
+                                    onclick="openBesoinModal('Alice Zinsou')"><i class="fas fa-eye"></i></button>
+                                <button class="admin-btn admin-btn-icon" style="background: #25D366;"
+                                    title="WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="admin-btn admin-btn-icon" style="background: #15803d;"
+                                    title="Marquer Traité"><i class="fas fa-check"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Koffi Mensah</strong><br>
+                            <small>Hier, 17:20</small><br>
+                            <small style="color: var(--admin-accent);"><i class="fas fa-phone"></i> +229 90 00 00
+                                04</small>
+                        </td>
+                        <td>
+                            <span class="badge" style="background: #f1f5f9; color: var(--admin-primary);">Sport /
+                                Dynamique</span>
+                        </td>
+                        <td>Conduite de nuit</td>
+                        <td style="font-weight: 600; color: var(--admin-accent);">80k - 120k CFA</td>
+                        <td><span class="badge" style="background: #ffedd5; color: #9a3412;">Rappelé</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-icon" title="Détails"
+                                    onclick="openBesoinModal('Koffi Mensah')"><i class="fas fa-eye"></i></button>
+                                <button class="admin-btn admin-btn-icon" style="background: #25D366;"
+                                    title="WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="admin-btn admin-btn-icon" style="background: #15803d;"
+                                    title="Marquer Traité"><i class="fas fa-check"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Sarah Bio</strong><br>
+                            <small>08/01/2025, 14:10</small><br>
+                            <small style="color: var(--admin-text-light);"><i class="fas fa-phone"></i> +229 90 00 00
+                                05</small>
+                        </td>
+                        <td>
+                            <span class="badge"
+                                style="background: #f1f5f9; color: var(--admin-primary);">Minimaliste</span>
+                        </td>
+                        <td>Lecture / Quotidien</td>
+                        <td style="font-weight: 600; color: var(--admin-accent);">50k - 90k CFA</td>
+                        <td><span class="badge badge-success">Traité</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-icon" title="Détails"
+                                    onclick="openBesoinModal('Sarah Bio')"><i class="fas fa-eye"></i></button>
+                                <button class="admin-btn admin-btn-icon" style="opacity: 0.5; background: #94a3b8;"
+                                    disabled><i class="fas fa-check"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal Détail du Besoin -->
+    <div class="modal-overlay" id="besoin-modal">
+        <div class="admin-modal" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2 id="modal-client-name">Détails de la demande</h2>
+                <i class="fas fa-times close-modal" onclick="closeModal('besoin-modal')"></i>
+            </div>
+
+            <div class="admin-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h3
+                        style="font-size: 0.9rem; color: var(--admin-accent); text-transform: uppercase; margin-bottom: 1rem;">
+                        Préférences Visuelles</h3>
+                    <div class="need-item">
+                        <small>Usage</small>
+                        <p><strong>Ordinateur & Travail intensif (Anti-lumière bleue)</strong></p>
+                    </div>
+                    <div class="need-item">
+                        <small>Type de verres souhaités</small>
+                        <p><strong>Progressifs spécialisés (Varilux Digitime)</strong></p>
+                    </div>
+                    <div class="need-item">
+                        <small>Fréquence d'utilisation</small>
+                        <p><strong>Quotidien (> 8h/jour)</strong></p>
+                    </div>
+                </div>
+                <div>
+                    <h3
+                        style="font-size: 0.9rem; color: var(--admin-accent); text-transform: uppercase; margin-bottom: 1rem;">
+                        Style & Budget</h3>
+                    <div class="need-item">
+                        <small>Style préféré</small>
+                        <p><strong>Luxe & Discret (Montures fines titane)</strong></p>
+                    </div>
+                    <div class="need-item">
+                        <small>Budget maximum</small>
+                        <p><strong>250 000 CFA</strong></p>
+                    </div>
+                    <div class="need-item">
+                        <small>Délai souhaité</small>
+                        <p><strong>Urgent (&lt; 1 semaine)</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: #f8fafc; border-radius: 16px;">
+                <h4 style="margin-bottom: 0.5rem; font-size: 0.9rem;">Commentaire client :</h4>
+                <p style="font-style: italic; color: var(--admin-text-light);">"Je travaille beaucoup sur écran et j'ai
+                    souvent des maux de tête en fin de journée. Je cherche quelque chose de léger et élégant pour le
+                    bureau."</p>
+            </div>
+
+            <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 3rem; margin-bottom: 1rem;">
+                <button class="admin-btn" style="background: #25D366;"><i class="fab fa-whatsapp"></i>
+                    Contacter</button>
+                <button class="admin-btn">Assigner à un Opticien</button>
+                <button class="admin-btn" style="background: var(--admin-accent);"
+                    onclick="closeModal('besoin-modal')">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/admin.js"></script>
+    <script>
+        function openBesoinModal(name) {
+            document.getElementById('modal-client-name').innerText = "Besoin de : " + name;
+            document.getElementById('besoin-modal').classList.add('active');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        // Simulation de filtrage
+        document.querySelector('select').addEventListener('change', (e) => {
+            console.log("Filtrage par : " + e.target.value);
+            // Ici on filtrerait les lignes du tableau
+        });
+
+        document.getElementById('besoin-search').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const name = row.querySelector('strong').innerText.toLowerCase();
+                row.style.display = name.includes(term) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>

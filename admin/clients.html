@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Clients | Les Opticiens du Golfe</title>
+    <link rel="stylesheet" href="/src/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+    <aside class="admin-sidebar">
+        <div class="admin-logo">
+            <img src="/logo-new.jpg" alt="Les Opticiens du Golfe">
+        </div>
+        <nav>
+            <ul class="admin-nav">
+                <li><a href="/admin/dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li class="active"><a href="/admin/clients.html"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a href="/admin/stock.html"><i class="fas fa-box-open"></i> Stocks</a></li>
+                <li><a href="/admin/besoins.html"><i class="fas fa-clipboard-list"></i> Prise de Besoins</a></li>
+                <li><a href="/admin/rappels.html"><i class="fas fa-bell"></i> Rappels Clients</a></li>
+                <li><a href="/admin/ventes.html"><i class="fas fa-file-invoice-dollar"></i> Ventes</a></li>
+            </ul>
+        </nav>
+        <div class="admin-sidebar-footer"
+            style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="/index.html" class="logout-link"
+                style="color: #ff4d4d; text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main" style="margin-left: 240px;">
+        <header class="admin-header">
+            <div class="header-left">
+                <h1>Répertoire Clients</h1>
+                <p>Gérez votre base de données clients et le suivi clinique</p>
+            </div>
+
+            <div class="admin-header-right" style="display: flex; align-items: center; gap: 20px;">
+                <div class="search-bar"
+                    style="background: white; padding: 0.6rem 1.2rem; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 10px; width: 300px;">
+                    <i class="fas fa-search" style="color: #94a3b8;"></i>
+                    <input type="text" placeholder="Rechercher un client..."
+                        style="border: none; outline: none; width: 100%;">
+                </div>
+                <button class="admin-btn"><i class="fas fa-plus"></i> Nouveau Client</button>
+            </div>
+        </header>
+
+        <!-- Filters Section -->
+        <section class="admin-card" style="margin-bottom: 2rem; padding: 1.5rem;">
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <span style="font-weight: 600; color: var(--admin-text-light);">Filtrer par :</span>
+                <select class="admin-input"
+                    style="padding: 0.5rem; border-radius: 8px; border: 1px solid var(--admin-border);">
+                    <option>Tous les clients</option>
+                    <option>Clients Actifs</option>
+                    <option>Premium (VIP)</option>
+                    <option>Nouveaux</option>
+                </select>
+                <select class="admin-input"
+                    style="padding: 0.5rem; border-radius: 8px; border: 1px solid var(--admin-border);">
+                    <option>Statut Lunettes (Tous)</option>
+                    <option>🟢 Valide</option>
+                    <option>🟠 Expire bientôt</option>
+                    <option>🔴 Expiré</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Clients Table -->
+        <section class="admin-card">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Identité / Contact</th>
+                        <th>Dernière Visite</th>
+                        <th>Date Prise Lunettes</th>
+                        <th>Expiration Prévue</th>
+                        <th>Statut Clinique</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div
+                                    style="width: 40px; height: 40px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--admin-primary);">
+                                    JD</div>
+                                <div>
+                                    <strong style="color: var(--admin-primary);">Jean Dupont</strong><br>
+                                    <small style="color: var(--admin-text-light);">+229 90 00 00 01</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>12/10/2024</td>
+                        <td>15/03/2024</td>
+                        <td>15/03/2025</td>
+                        <td><span class="badge badge-warning">Expire bientôt</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="/admin/client-detail.html" class="admin-btn admin-btn-icon"
+                                    title="Voir Fiche"><i class="fas fa-eye"></i></a>
+                                <button class="admin-btn admin-btn-icon" style="background: #25D366;"
+                                    title="WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div
+                                    style="width: 40px; height: 40px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--admin-primary);">
+                                    MK</div>
+                                <div>
+                                    <strong style="color: var(--admin-primary);">Marie Kouassi</strong><br>
+                                    <small style="color: var(--admin-text-light);">+229 90 00 00 02</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>05/01/2025</td>
+                        <td>20/12/2022</td>
+                        <td>20/12/2024</td>
+                        <td><span class="badge badge-danger">Expiré</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="/admin/client-detail.html" class="admin-btn admin-btn-icon"
+                                    title="Voir Fiche"><i class="fas fa-eye"></i></a>
+                                <button class="admin-btn admin-btn-icon" style="background: #25D366;"
+                                    title="WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div
+                                    style="width: 40px; height: 40px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--admin-primary);">
+                                    AZ</div>
+                                <div>
+                                    <strong style="color: var(--admin-primary);">Alice Zinsou</strong><br>
+                                    <small style="color: var(--admin-text-light);">+229 90 00 00 03</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Aujourd'hui</td>
+                        <td>10/11/2024</td>
+                        <td>10/11/2026</td>
+                        <td><span class="badge badge-success">Valide</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="/admin/client-detail.html" class="admin-btn admin-btn-icon"
+                                    title="Voir Fiche"><i class="fas fa-eye"></i></a>
+                                <button class="admin-btn admin-btn-icon" style="background: #25D366;"
+                                    title="WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- Modal Nouveau Client -->
+    <div class="modal-overlay" id="new-client-modal">
+        <div class="admin-modal">
+            <div class="modal-header">
+                <h2>Nouveau Client</h2>
+                <i class="fas fa-times close-modal" onclick="closeModal('new-client-modal')"></i>
+            </div>
+            <form id="new-client-form">
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Prénom</label>
+                        <input type="text" class="admin-form-input" placeholder="ex: Jean" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Nom</label>
+                        <input type="text" class="admin-form-input" placeholder="ex: Dupont" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Email</label>
+                        <input type="email" class="admin-form-input" placeholder="client@email.com">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Téléphone</label>
+                        <input type="tel" class="admin-form-input" placeholder="+229 ..." required>
+                    </div>
+                </div>
+                <div class="admin-form-group">
+                    <label>Notes initiales</label>
+                    <textarea class="admin-form-input" rows="3" placeholder="Informations importantes..."></textarea>
+                </div>
+                <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 1rem;">
+                    <button type="button" class="admin-btn" style="background: #e2e8f0; color: var(--admin-text);"
+                        onclick="closeModal('new-client-modal')">Annuler</button>
+                    <button type="submit" class="admin-btn">Enregistrer le Client</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/src/admin.js"></script>
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        // Connect the "Nouveau Client" button
+        document.querySelector('.admin-header .admin-btn').addEventListener('click', () => openModal('new-client-modal'));
+
+        document.getElementById('new-client-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Client ajouté avec succès (Simulation)');
+            closeModal('new-client-modal');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Client | Les Opticiens du Golfe</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="auth-page">
+    <!-- Navbar (Simplified) -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="/index.html" class="logo">
+                <img src="/logo-new.jpg" alt="Logo" style="height: 50px; border-radius: 5px;">
+            </a>
+            <a href="/index.html" class="back-link"><i class="fas fa-arrow-left"></i> Retour au site</a>
+        </div>
+    </nav>
+
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" data-tab="login">Connexion</button>
+                        <button class="auth-tab" data-tab="register">Inscription</button>
+                    </div>
+                </div>
+
+                <!-- Login Form -->
+                <div class="auth-form-container active" id="login-form">
+                    <form id="login-form-element">
+                        <h2>Bon retour parmi nous</h2>
+                        <p class="subtitle">Connectez-vous pour accéder à votre espace personnalisé.</p>
+
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <div class="input-with-icon">
+                                <i class="far fa-envelope"></i>
+                                <input type="email" id="login-email" placeholder="votre@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password">Mot de passe</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="login-password" placeholder="••••••••" required>
+                            </div>
+                        </div>
+
+                        <div class="form-footer">
+                            <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                        </div>
+
+                        <button type="submit" class="cta-btn full-width">Se connecter</button>
+                    </form>
+                </div>
+
+                <!-- Register Form -->
+                <div class="auth-form-container" id="register-form">
+                    <form id="register-form-element">
+                        <h2>Créer un compte</h2>
+                        <p class="subtitle">Rejoignez Les Opticiens du Golfe pour un suivi privilégié.</p>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reg-name">Nom complet</label>
+                                <div class="input-with-icon">
+                                    <i class="far fa-user"></i>
+                                    <input type="text" id="reg-name" placeholder="Jean Dupont" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-email">Email</label>
+                            <div class="input-with-icon">
+                                <i class="far fa-envelope"></i>
+                                <input type="email" id="reg-email" placeholder="votre@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-password">Mot de passe</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="reg-password" placeholder="••••••••" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                J'accepte les <a href="#">conditions d'utilisation</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="cta-btn full-width">Créer mon compte</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

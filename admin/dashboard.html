@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin | Les Opticiens du Golfe</title>
+    <link rel="stylesheet" href="/src/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+    <aside class="admin-sidebar">
+        <div class="admin-logo">
+            <img src="/logo-new.jpg" alt="Les Opticiens du Golfe">
+        </div>
+        <nav>
+            <ul class="admin-nav">
+                <li class="active"><a href="/admin/dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="/admin/clients.html"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a href="/admin/stock.html"><i class="fas fa-box-open"></i> Stocks</a></li>
+                <li><a href="/admin/besoins.html"><i class="fas fa-clipboard-list"></i> Prise de Besoins</a></li>
+                <li><a href="/admin/rappels.html"><i class="fas fa-bell"></i> Rappels Clients</a></li>
+                <li><a href="/admin/ventes.html"><i class="fas fa-file-invoice-dollar"></i> Ventes</a></li>
+            </ul>
+        </nav>
+        <div class="admin-sidebar-footer"
+            style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="/index.html" class="logout-link"
+                style="color: #ff4d4d; text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div>
+                <h1 style="color: var(--primary);">Bienvenue, Admin</h1>
+                <p style="color: var(--text-muted);">Voici un résumé de votre activité aujourd'hui</p>
+            </div>
+            <div class="admin-user-profile" style="display: flex; align-items: center; gap: 15px;">
+                <span style="font-weight: 600;">Staff Opticien</span>
+                <div
+                    style="width: 40px; height: 40px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+            </div>
+        </header>
+
+        <section class="admin-stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #e3f2fd; color: #1976d2;"><i class="fas fa-user-plus"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Nouveaux Clients</h3>
+                    <p>12</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #e8f5e9; color: #388e3c;"><i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Ventes du mois</h3>
+                    <p>45</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #fff3e0; color: #f57c00;"><i class="fas fa-glasses"></i></div>
+                <div class="stat-info">
+                    <h3>Stocks Bas</h3>
+                    <p>8</p>
+                </div>
+            </div>
+            <div class="stat-card" style="border: 2px solid var(--accent);">
+                <div class="stat-icon" style="background: rgba(187, 161, 79, 0.1); color: var(--accent);"><i
+                        class="fas fa-calendar-times"></i></div>
+                <div class="stat-info">
+                    <h3>À Recontacter</h3>
+                    <p>5</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="admin-grid"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+            <!-- Performance Chart -->
+            <div class="admin-card">
+                <h2 style="font-size: 1.1rem; color: var(--admin-primary); margin-bottom: 1.5rem;">Performance Mensuelle
+                    (CFA)</h2>
+                <div style="height: 180px; display: flex; align-items: flex-end; gap: 10px;">
+                    <div style="flex: 1; height: 30%; background: #e2e8f0; border-radius: 4px;"></div>
+                    <div style="flex: 1; height: 45%; background: #e2e8f0; border-radius: 4px;"></div>
+                    <div style="flex: 1; height: 70%; background: var(--admin-accent); border-radius: 4px;"></div>
+                    <div style="flex: 1; height: 55%; background: #e2e8f0; border-radius: 4px;"></div>
+                    <div style="flex: 1; height: 90%; background: var(--admin-primary); border-radius: 4px;"></div>
+                </div>
+                <div
+                    style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.7rem; color: #94a3b8;">
+                    <span>Sem 1</span><span>Sem 2</span><span>Sem 3</span><span>Sem 4</span><span>Sem 5</span>
+                </div>
+            </div>
+
+            <!-- Goal Tracker -->
+            <div class="admin-card">
+                <h2 style="font-size: 1.1rem; color: var(--admin-primary); margin-bottom: 1.5rem;">Objectif Chiffre
+                    d'Affaires</h2>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="position: relative; width: 80px; height: 80px;">
+                        <svg viewBox="0 0 36 36" style="width: 100%; height: 100%;">
+                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                fill="none" stroke="#eee" stroke-width="3" />
+                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                fill="none" stroke="var(--admin-accent)" stroke-width="3" stroke-dasharray="75, 100" />
+                        </svg>
+                        <div
+                            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: 700; font-size: 0.9rem;">
+                            75%</div>
+                    </div>
+                    <div>
+                        <p style="margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--admin-primary);">4 500
+                            000 CFA</p>
+                        <p style="margin: 0; font-size: 0.8rem; color: var(--admin-text-light);">sur un objectif de 6M
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="admin-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+            <!-- Expiring Soon Table -->
+            <div class="admin-card exp-alert">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h2 style="font-size: 1.2rem; color: var(--admin-primary);">🔔 Prochaines Expirations</h2>
+                    <a href="/admin/rappels.html"
+                        style="font-size: 0.8rem; color: var(--admin-accent); font-weight: 600;">Tout voir</a>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Expiration</th>
+                            <th>Statut</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Jean Dupont</strong></td>
+                            <td>12/03/2025</td>
+                            <td><span class="badge badge-warning">Expire bientôt</span></td>
+                            <td><button class="admin-btn admin-btn-icon" style="background: #25D366;"><i
+                                        class="fab fa-whatsapp"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Marie Kouassi</strong></td>
+                            <td>15/01/2025</td>
+                            <td><span class="badge badge-danger">Expiré</span></td>
+                            <td><button class="admin-btn admin-btn-icon" style="background: #25D366;"><i
+                                        class="fab fa-whatsapp"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Recent Needs -->
+            <div class="admin-card">
+                <h2 style="font-size: 1.1rem; color: var(--admin-primary); margin-bottom: 1.5rem;">Besoins Récents</h2>
+                <div class="need-item"
+                    style="border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
+                    <p style="margin: 0;"><strong>Alice Zinsou</strong></p>
+                    <p style="font-size: 0.8rem; color: var(--admin-text-light); margin: 4px 0;">Style: Luxe • Usage:
+                        Ordinateur</p>
+                    <a href="/admin/besoins.html" style="font-size: 0.75rem; color: var(--admin-accent);">Consulter</a>
+                </div>
+                <div class="need-item">
+                    <p style="margin: 0;"><strong>Robert Mensah</strong></p>
+                    <p style="font-size: 0.8rem; color: var(--admin-text-light); margin: 4px 0;">Style: Sport • Usage:
+                        Conduite</p>
+                    <a href="/admin/besoins.html" style="font-size: 0.75rem; color: var(--admin-accent);">Consulter</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

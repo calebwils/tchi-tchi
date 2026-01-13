@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Stocks | Les Opticiens du Golfe</title>
+    <link rel="stylesheet" href="/src/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+    <aside class="admin-sidebar">
+        <div class="admin-logo">
+            <img src="/logo-new.jpg" alt="Les Opticiens du Golfe">
+        </div>
+        <nav>
+            <ul class="admin-nav">
+                <li><a href="/admin/dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="/admin/clients.html"><i class="fas fa-users"></i> Clients</a></li>
+                <li class="active"><a href="/admin/stock.html"><i class="fas fa-box-open"></i> Stocks</a></li>
+                <li><a href="/admin/besoins.html"><i class="fas fa-clipboard-list"></i> Prise de Besoins</a></li>
+                <li><a href="/admin/rappels.html"><i class="fas fa-bell"></i> Rappels Clients</a></li>
+                <li><a href="/admin/ventes.html"><i class="fas fa-file-invoice-dollar"></i> Ventes</a></li>
+            </ul>
+        </nav>
+        <div class="admin-sidebar-footer"
+            style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="/index.html" class="logout-link"
+                style="color: #ff4d4d; text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main" style="margin-left: 240px;">
+        <header class="admin-header">
+            <div class="header-left">
+                <h1>Gestion des Stocks</h1>
+                <p>Suivi de l'inventaire en temps réel (Montures, Verres, Accessoires)</p>
+            </div>
+
+            <div class="admin-header-right" style="display: flex; align-items: center; gap: 20px;">
+                <div class="search-bar"
+                    style="background: white; padding: 0.6rem 1.2rem; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 10px; width: 300px;">
+                    <i class="fas fa-search" style="color: #94a3b8;"></i>
+                    <input type="text" placeholder="Référence, Marque...">
+                </div>
+                <button class="admin-btn"><i class="fas fa-plus"></i> Ajouter Produit</button>
+            </div>
+        </header>
+
+        <!-- Stock Summary Cards -->
+        <section class="admin-stats-grid" style="margin-bottom: 2rem;">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #e3f2fd; color: #1976d2;"><i class="fas fa-glasses"></i></div>
+                <div class="stat-info">
+                    <h3>Montures</h3>
+                    <p>245</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #e8f5e9; color: #388e3c;"><i class="fas fa-eye"></i></div>
+                <div class="stat-info">
+                    <h3>Verres Stock</h3>
+                    <p>890</p>
+                </div>
+            </div>
+            <div class="stat-card" style="border: 1px solid #fee2e2;">
+                <div class="stat-icon" style="background: #fee2e2; color: #991b1b;"><i
+                        class="fas fa-exclamation-triangle"></i></div>
+                <div class="stat-info">
+                    <h3>Alertes Stock</h3>
+                    <p>8</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="admin-card" style="margin-bottom: 2rem; padding: 1.5rem;">
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <span style="font-weight: 600; color: var(--admin-text-light);">Catégorie :</span>
+                <select class="admin-input"
+                    style="padding: 0.5rem; border-radius: 8px; border: 1px solid var(--admin-border);">
+                    <option>Toutes les catégories</option>
+                    <option>Montures Homme</option>
+                    <option>Montures Femme</option>
+                    <option>Enfants</option>
+                    <option>Solaires</option>
+                    <option>Lentilles</option>
+                    <option>Accessoires</option>
+                </select>
+                <select class="admin-input"
+                    style="padding: 0.5rem; border-radius: 8px; border: 1px solid var(--admin-border);">
+                    <option>Disponibilité (Toutes)</option>
+                    <option>En Stock</option>
+                    <option>Stock Bas (⚠️)</option>
+                    <option>Rupture (❌)</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Inventory Table -->
+        <section class="admin-card">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Référence / Marque</th>
+                        <th>Catégorie</th>
+                        <th>Prix (CFA)</th>
+                        <th>Stock Actuel</th>
+                        <th>Statut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GUCCI GC1234</strong><br><small>Modèle Luxe Gold</small></td>
+                        <td>Solaires Femme</td>
+                        <td>125 000</td>
+                        <td>15</td>
+                        <td><span class="badge badge-success">En Stock</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-icon" title="Modifier"><i
+                                        class="fas fa-edit"></i></button>
+                                <button class="admin-btn admin-btn-icon" title="Historique"><i
+                                        class="fas fa-history"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>RAY-BAN RB2132</strong><br><small>Wayfarer Classic</small></td>
+                        <td>Montures Homme</td>
+                        <td>85 000</td>
+                        <td>2</td>
+                        <td><span class="badge badge-warning">Stock Bas</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-icon" title="Modifier"><i
+                                        class="fas fa-edit"></i></button>
+                                <button class="admin-btn admin-btn-icon" title="Commander"><i
+                                        class="fas fa-truck-loading"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>CHANEL CH5432</strong><br><small>Prestige Edition</small></td>
+                        <td>Luxe Femme</td>
+                        <td>210 000</td>
+                        <td>0</td>
+                        <td><span class="badge badge-danger">Rupture</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-icon" title="Modifier"><i
+                                        class="fas fa-edit"></i></button>
+                                <button class="admin-btn admin-btn-icon" style="background: var(--admin-accent);"
+                                    title="Commander"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>ESSILOR CRIZAL</strong><br><small>Verres Anti-reflets</small></td>
+                        <td>Verres Unitaires</td>
+                        <td>45 000</td>
+                        <td>150</td>
+                        <td><span class="badge badge-success">Abondant</span></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="admin-btn admin-btn-icon" title="Modifier"><i
+                                        class="fas fa-edit"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- Modal Nouveau Produit -->
+    <div class="modal-overlay" id="new-stock-modal">
+        <div class="admin-modal">
+            <div class="modal-header">
+                <h2>Ajouter un Produit</h2>
+                <i class="fas fa-times close-modal" onclick="closeModal('new-stock-modal')"></i>
+            </div>
+            <form id="new-stock-form">
+                <div class="admin-form-group">
+                    <label>Dénomination / Référence</label>
+                    <input type="text" class="admin-form-input" placeholder="ex: RAY-BAN RB2132" required>
+                </div>
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Catégorie</label>
+                        <select class="admin-form-input">
+                            <option>Montures Homme</option>
+                            <option>Montures Femme</option>
+                            <option>Luxe</option>
+                            <option>Verres</option>
+                            <option>Accessoires</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Prix de vente (CFA)</label>
+                        <input type="number" class="admin-form-input" placeholder="85000" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="admin-form-group">
+                        <label>Quantité initiale</label>
+                        <input type="number" class="admin-form-input" value="1" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Seuil d'alerte</label>
+                        <input type="number" class="admin-form-input" value="3">
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 1rem;">
+                    <button type="button" class="admin-btn" style="background: #e2e8f0; color: var(--admin-text);"
+                        onclick="closeModal('new-stock-modal')">Annuler</button>
+                    <button type="submit" class="admin-btn">Entrer en Stock</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/src/admin.js"></script>
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        // Connect the "Ajouter Produit" button
+        document.querySelector('.admin-header .admin-btn').addEventListener('click', () => openModal('new-stock-modal'));
+
+        document.getElementById('new-stock-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Produit ajouté au stock avec succès (Simulation)');
+            closeModal('new-stock-modal');
+        });
+    </script>
+</body>
+
+</html>
