@@ -25,73 +25,63 @@
         </div>
     </nav>
 
-    <main style="padding-top: 100px;">
+    <main style="padding-top: 100px; padding-bottom: 50px;">
         <div class="container">
-            <div class="product-detail-grid"
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px;">
+            <div class="product-detail-grid">
                 <!-- Gallery Section -->
                 <div class="product-gallery">
-                    <div class="main-image-container"
-                        style="background: #f8fbff; border-radius: 20px; padding: 40px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; height: 500px;">
-                        <img id="main-product-img" src="/glasses-1.png" alt="Produit"
-                            style="max-width: 100%; transition: transform 0.3s ease;">
+                    <div class="main-image-container">
+                        <img id="main-product-img" src="/glasses-1.png" alt="Produit">
                     </div>
-                    <div class="thumbnail-grid"
-                        style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px;">
-                        <div class="thumb active" onclick="updateMainImage('/glasses-1.png')"
-                            style="cursor: pointer; border: 2px solid var(--primary); border-radius: 10px; padding: 10px; background: #f8fbff;">
-                            <img src="/glasses-1.png" style="width: 100%;"></div>
-                        <div class="thumb"
-                            onclick="updateMainImage('https://github.com/calebwils/les-opticiens-du-golfe/blob/main/public/catalog-black.png?raw=true')"
-                            style="cursor: pointer; border: 1px solid #ddd; border-radius: 10px; padding: 10px; background: #f8fbff;">
-                            <img src="/catalog-black.png" style="width: 100%;"></div>
-                        <div class="thumb" onclick="updateMainImage('/glasses-angle-side-1_1768310324733.png')"
-                            style="cursor: pointer; border: 1px solid #ddd; border-radius: 10px; padding: 10px; background: #f8fbff;">
-                            <img src="/glasses-angle-side-1_1768310324733.png" style="width: 100%;"></div>
-                        <div class="thumb" onclick="updateMainImage('/glasses-angle-top_1_1768310365103.png')"
-                            style="cursor: pointer; border: 1px solid #ddd; border-radius: 10px; padding: 10px; background: #f8fbff;">
-                            <img src="/glasses-angle-top_1_1768310365103.png" style="width: 100%;"></div>
+                    <div class="thumbnail-grid">
+                        <div class="thumb active" onclick="updateMainImage(this, '/glasses-1.png')">
+                            <img src="/glasses-1.png" alt="Vue principale">
+                        </div>
+                        <div class="thumb" onclick="updateMainImage(this, '/angle-side.png')">
+                            <img src="/angle-side.png" alt="Vue de côté">
+                        </div>
+                        <div class="thumb" onclick="updateMainImage(this, '/angle-top.png')">
+                            <img src="/angle-top.png" alt="Vue de dessus">
+                        </div>
+                        <div class="thumb" onclick="updateMainImage(this, '/catalog-black.png')">
+                            <img src="/catalog-black.png" alt="Vue catalogue">
+                        </div>
                     </div>
                 </div>
 
                 <!-- Info & Try-On Section -->
                 <div class="product-info">
-                    <h1 id="prod-name" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 10px;">Luxe
+                    <h1 id="prod-name" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 5px;">Luxe
                         Titanium Pro</h1>
                     <p id="prod-price"
                         style="font-size: 1.8rem; font-weight: 700; color: var(--secondary); margin-bottom: 25px;">
                         125.000 FCFA</p>
 
-                    <div class="vto-section"
-                        style="background: white; border-radius: 24px; padding: 25px; border: 1px solid #eee; box-shadow: var(--shadow);">
-                        <h3 style="margin-bottom: 15px;"><i class="fas fa-magic"></i> Essai Virtuel</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Découvrez comment
+                    <div class="vto-section">
+                        <h3 style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-magic" style="color: var(--secondary);"></i> Essai Virtuel
+                        </h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Découvrez comment
                             cette monture s'adapte à différents visages.</p>
 
-                        <div class="vto-display"
-                            style="position: relative; width: 100%; aspect-ratio: 1; background: #eee; border-radius: 15px; overflow: hidden;">
-                            <img id="vto-background" src="/model_face_female_1_1768309995627.png"
-                                style="width: 100%; height: 100%; object-fit: cover;">
-                            <img id="vto-glasses-overlay" src="/glasses-1.png"
-                                style="position: absolute; top: 38.5%; left: 50%; transform: translate(-50%, -50%); width: 45%; pointer-events: none; mix-blend-mode: multiply; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));">
+                        <div class="vto-display">
+                            <img id="vto-background" src="/face-female-1.png" alt="Modèle">
+                            <img id="vto-glasses-overlay" src="/glasses-1.png" alt="Lunettes">
                         </div>
 
-                        <div class="face-selector" style="display: flex; gap: 10px; margin-top: 20px;">
-                            <img src="/model_face_female_1_1768309995627.png"
-                                onclick="setVTOBackground('/model_face_female_1_1768309995627.png')"
-                                style="width: 60px; height: 60px; border-radius: 50%; cursor: pointer; border: 2px solid var(--primary);">
-                            <img src="/model_face_male_1_1768310254951.png"
-                                onclick="setVTOBackground('/model_face_male_1_1768310254951.png')"
-                                style="width: 60px; height: 60px; border-radius: 50%; cursor: pointer; border: 2px solid #ddd;">
-                            <img src="/model_face_female_2_1768310104507.png"
-                                onclick="setVTOBackground('/model_face_female_2_1768310104507.png')"
-                                style="width: 60px; height: 60px; border-radius: 50%; cursor: pointer; border: 2px solid #ddd;">
+                        <div class="face-selector">
+                            <img src="/face-female-1.png" class="active"
+                                onclick="setVTOBackground(this, '/face-female-1.png')" alt="Femme 1">
+                            <img src="/face-male-1.png" onclick="setVTOBackground(this, '/face-male-1.png')"
+                                alt="Homme 1">
+                            <img src="/face-female-2.png" onclick="setVTOBackground(this, '/face-female-2.png')"
+                                alt="Femme 2">
                         </div>
                     </div>
 
-                    <div style="margin-top: 30px; display: flex; gap: 15px;">
-                        <button class="cta-btn" style="flex: 1;">Ajouter au panier</button>
-                        <button class="cta-btn btn-outline" style="flex: 1;">WhatsApp Direct</button>
+                    <div class="detail-actions">
+                        <button class="cta-btn"><i class="fas fa-shopping-cart"></i> Ajouter au panier</button>
+                        <button class="cta-btn btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</button>
                     </div>
                 </div>
             </div>
@@ -99,23 +89,18 @@
     </main>
 
     <script>
-        function updateMainImage(src) {
+        function updateMainImage(el, src) {
             document.getElementById('main-product-img').src = src;
-            // Update thumbs border
-            const thumbs = document.querySelectorAll('.thumb');
-            thumbs.forEach(t => t.style.borderColor = '#ddd');
-            event.currentTarget.style.borderColor = 'var(--primary)';
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
         }
 
-        function setVTOBackground(src) {
+        function setVTOBackground(el, src) {
             document.getElementById('vto-background').src = src;
-            // Update selectors border
-            const selectors = document.querySelectorAll('.face-selector img');
-            selectors.forEach(s => s.style.borderColor = '#ddd');
-            event.currentTarget.style.borderColor = 'var(--primary)';
+            document.querySelectorAll('.face-selector img').forEach(s => s.classList.remove('active'));
+            el.classList.add('active');
         }
 
-        // Simple URL data handling
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const name = params.get('name') || 'Luxe Titanium Pro';
@@ -124,7 +109,18 @@
 
             document.getElementById('prod-name').innerText = name;
             document.getElementById('prod-price').innerText = price;
-            document.getElementById('main-product-img').src = img;
+            
+            // Set initial images
+            const mainImg = document.getElementById('main-product-img');
+            mainImg.src = img;
+            
+            // Update the first thumbnail to the specific product image
+            const firstThumbImg = document.querySelector('.thumb.active img');
+            if (firstThumbImg) {
+                firstThumbImg.src = img;
+                firstThumbImg.closest('.thumb').onclick = function() { updateMainImage(this, img); };
+            }
+
             document.getElementById('vto-glasses-overlay').src = img;
         });
     </script>
