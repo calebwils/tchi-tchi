@@ -1000,7 +1000,7 @@ main>section {
 
 /* Auth Page Styles */
 .auth-page {
-  background: url('/login-bg-new.png') no-repeat center center/cover;
+  background: url('/auth-bg.png') no-repeat center center/cover;
   min-height: 100vh;
   position: relative;
 }
@@ -1320,6 +1320,7 @@ main>section {
   padding: 18px;
   font-size: 1.1rem;
 }
+
 /* About Page Specifics */
 .about-grid {
   display: grid;
@@ -1416,7 +1417,7 @@ main>section {
     padding: 12px;
     border-radius: 50%;
   }
-  
+
   .whatsapp-float span {
     display: none;
   }
