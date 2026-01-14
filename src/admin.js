@@ -1,5 +1,5 @@
 /**
- * Core Logic for Les Opticiens du Golfe - Admin System
+ * Core Logic for Tchi Tchi Africa - Admin System
  */
 
 const AdminApp = {

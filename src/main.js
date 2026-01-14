@@ -1,5 +1,5 @@
 // Main entry point
-console.log('Les Opticiens du Golfe - Website initialized');
+console.log('Tchi Tchi Africa - Website initialized');
 
 // Simple scroll effect for navbar
 window.addEventListener('scroll', () => {
