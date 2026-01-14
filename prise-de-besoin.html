@@ -209,27 +209,14 @@
     </footer>
 
     <script type="module" src="/src/main.js"></script>
-    <script>
-        // Add visual feedback for selected options
-        document.querySelectorAll('.option-card input').forEach(input => {
-            input.addEventListener('change', (e) => {
-                const name = e.target.name;
-                document.querySelectorAll(`input[name="${name}"]`).forEach(i => {
-                    i.parentElement.classList.remove('selected');
-                });
-                if (e.target.checked) {
-                    e.target.parentElement.classList.add('selected');
-                }
-            });
-        });
-
-        document.getElementById('besoin-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Merci ! Votre demande a été reçue. Nous vous contacterons très prochainement.');
-            e.target.reset();
-            document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
-        });
     </script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/2290167961919?text=Bonjour,%20je%20souhaiterais%20avoir%20des%20informations%20sur%20vos%20lunettes."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>Contactez-nous</span>
+    </a>
 </body>
 
 </html>
